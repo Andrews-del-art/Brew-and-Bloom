@@ -76,26 +76,117 @@
         }
 
         #hero{
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            min-height: 90vh;
+            padding-top: 6rem;            
+            text-align: left;
+        }
+
+
+        .hero-badge{
+            display: inline-block;
+            background: var(--cream-dark);
+            color: var(--amber);
+            border-radius:2rem;
+            padding: 0.4rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
         }
 
         #hero h1{
             font-family: var(--font-head);
             font-size: 3.5rem;
-            line-height: 1.15;
+            line-height: 1.1;
             margin-bottom: 1.25rem;
         }
 
+        #hero h1 em{
+            font-style: italic;
+            color: var(--amber);
+        }
+
         #hero p{
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: var(--muted);
             margin-bottom: 2rem;
+            max-width: 460px;
+        }
+
+        .hero-buttons{
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn-primary{
+            background: var(--amber);
+            color: white;
+            padding: 0.85rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        .btn-primary:hover{
+            background: #a85e22;
+        }
+
+        .btn-outline{ 
+            border: 1.5px solid var(--brown);
+            color: var(--brown);
+            padding: 0.85rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover{
+            background: var(--brown);
+            color: white;
+        }
+
+        .hero-card{
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 12px 48px rgba(44, 24, 16, 0.15);
+        }
+
+        .hero-img{
+            background: linear-gradient(145deg, #d4a574, #4a2c17);
+            height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6rem;
         }
         
+        .hero-card-info{
+            padding: 1.25rem;
+        }
+
+        .card-name{
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .card-notes{
+            font-weight: 600;
+            color: var(--muted)
+        }
+
+        .card-price{
+            font-family: var(--font-head);
+            color: var(--amber);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
         #hero a{
             display: inline-block;
             background: var(--amber);
@@ -148,9 +239,27 @@
     <main>
 
         <section id="hero">
-            <h1>Where Every Cup Tells a Story</h1>
-            <p>Small-batch roasted coffee, sourced directly from family fatms.</p>
-            <a href="#menu">Explore Menu</a>
+            
+            <div class="hero-text">
+                <div class="hero-badge"> Est.2019. Award Winning Roastery</div>
+                <h1>Where Every Cup<br>Tells a <em>Story</em></h1>
+                <p>We source single-origin beans from family farms across Ethopia, Colombia, and Guatemala - roasting in small batches to bring out each bean's true character.</p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn-primary">Explore Menu</a>
+                    <a href="#contact" class="btn-outline">Find Us</a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="hero-img">☕</div>
+                    <div class="hero-card-info">
+                        <div class="card-name">Ethiopian Yirgacheffe</div>
+                        <div class="card-notes">Floral . Citrus . Berry notes</div>
+                        <div class="card-price">GHS 25.00</div>
+                    </div>
+                </div>
+            </div>
         </section>
 
 
