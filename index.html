@@ -1,7 +1,136 @@
 <! DOCTYPE html>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Brew & Bloom - Coffee Shop</title>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brew & Bloom - Coffee Shop</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link href="https//fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />"
+
+    <style>
+
+        :root {
+            --brown: #2c1810;
+            --amber: #c4712a;
+            --cream: #faf7f2;
+            --cream-dark: #f5e6d3;
+            --muted: #7a6355;
+            --border: #e8ddd4;
+            --white: #ffffff;
+            --font-head: 'Playfair Display',Georgia, serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {scroll-behavior: smooth;}
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--cream);
+            color: var(--brown);
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 2rem;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+        }
+
+        nav a{
+            text-decoration: none;
+            color: var(--brown);
+            font-weight: 500;
+        }
+
+        nav a{
+            font-family: var(--font-head);
+            font-size: 1.4rem;
+        }
+
+        nav ul{
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav ul a:hover{
+            color: var(--amber);
+        }
+
+        section{
+            padding: 5rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        #hero{
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #hero h1{
+            font-family: var(--font-head);
+            font-size: 3.5rem;
+            line-height: 1.15;
+            margin-bottom: 1.25rem;
+        }
+
+        #hero p{
+            font-size: 1.15rem;
+            color: var(--muted);
+            margin-bottom: 2rem;
+        }
+        
+        #hero a{
+            display: inline-block;
+            background: var(--amber);
+            color: white;
+            padding: 0.85rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s ease;
+        }
+
+        #hero a:hover{
+            background: #a85e22;
+        }
+
+        h2 {
+            font-family: var(--font-head);
+            font-size: 2.25rem;
+            margin-bottom: 1rem;
+        }
+        p{
+            color: var(--muted);
+            max-width: 560px;
+        }
+
+        footer{
+            background: var(--brown);
+            color: rgba(255,255,255,0.65);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.875rem;
+        }
+
+        
+    </style>
 </head>
 
 <body>
