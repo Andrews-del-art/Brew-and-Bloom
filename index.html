@@ -212,6 +212,98 @@
             max-width: 560px;
         }
 
+
+        #menu{
+            background: white;
+            padding: 5rem 2rem;
+            max-width: 100%;
+        }
+
+        #menu > * {
+            max-width: 1100px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-label{
+            font-size:0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--amber);
+            margin-bottom: 0.5rem;
+        }
+
+        .menu-tabs{
+            display: flex;
+            gap: 0.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn{
+            padding: 0.6rem 1.4rem;
+            border-radius: 2rem;
+            border: 1.5px solid var(--border);
+            background: transparent;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--muted);
+            font-family: var(--font-body);
+        }
+
+        .tab-btn:hover,
+        .tab-btn:active{
+            background: var(--amber);
+            border-color: var(--amber);
+            color: white;
+        }
+
+        .menu-grid{
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .menu-item{
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background: var(--cream);
+        }
+
+        .menu-item:hover{
+            border-color: var(--amber);
+            box-shadow: 0 4px 24px rgba(44, 24, 16, 0.08);
+        }
+
+        .menu-emoji{
+            font-size: 2.25rem;
+            flex-shrink: 0;
+        }
+
+        .menu-name{
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .menu-desc{
+            font-size: 0.85rem;
+            color: var(--amber);
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .hidden{
+            display: none;
+        }
+
         footer{
             background: var(--brown);
             color: rgba(255,255,255,0.65);
@@ -270,8 +362,85 @@
 
 
         <section id="menu">
+            <p class="section-label">What We Offer</p>
             <h2>Our Menu</h2>
-            <p>Handcrafted drinks made to order.</p>
+            <p>Handcrafted drinks made to order. All prices in GHS.</p>
+
+            <div class="menu-tabs">
+                <button class="tab-btn active" data-catetory="all">All Items</button>
+                <button class="tab-btn" data-catetory="espresso">Espresso</button>
+                <button class="tab-btn" data-catetory="filter">Filter</button>
+                <button class="tab-btn" data-catetory="food">Food</button>
+            </div>
+
+
+            <div class="menu-grid" id="menu-grid">
+
+                <div class="menu-item" data-catetory="espresso">
+                    <div class="menu-emoji">☕</div>
+                    <div>
+                        <div class="menu-name">Espresso</div>
+                        <div class="menu-desc">Rich, sweet and perfectly balanced.</div>
+                        <div class="menu-price">GHS 18</div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="espresso">
+                    <div class="menu-emoji">🥛</div>
+                    <div>
+                        <div class="menu-name">Flat White</div>
+                        <div class="menu-desc">Double ristretto with velvety steamed milk.</div>
+                        <div class="menu-price">GHS 28</div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="espresso">
+                    <div class="menu-emoji">🍦</div>
+                    <div>
+                        <div class="menu-name">Vanilla Latte</div>
+                        <div class="menu-desc">Espresso, steamed milk, house-made vanilla syrup.</div>
+                        <div class="menu-price">GHS 32</div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="filter">
+                    <div class="menu-emoji">🫗</div>
+                    <div>
+                        <div class="menu-name">Pour Over</div>
+                        <div class="menu-desc">Single origin brewed to order. Rotating selection.</div>
+                        <div class="menu-price">GHS 35</div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="filter">
+                    <div class="menu-emoji">🧊</div>
+                    <div>
+                        <div class="menu-name">Cold Brew</div>
+                        <div class="menu-desc">Steeped 18 hours. Smooth and natually sweet.</div>
+                        <div class="menu-price">GHS 30</div>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="food">
+                    <div class="menu-emoji">🥐</div>
+                    <div>
+                        <div class="menu-name">Butter Croissant</div>
+                        <div class="menu-desc">Freshly baked each morning. Flaky and buttery.</div>
+                        <div class="menu-price">GHS 22</div>
+                    </div>    
+                </div>
+
+                <div class="menu-item" data-category="food">
+                    <div class="menu-emoji">🍫</div>
+                    <div>
+                        <div class="menu-name">Dark Chocolate Tart</div>
+                        <div class="menu-desc">Belgian dark chocolate ganache in an almond crust.</div>
+                        <div class="menu-price">GHS 28</div>
+                    </div>
+                </div> 
+
+
+            </div>
         </section>
 
 
@@ -288,6 +457,32 @@
         <p>© 2026 Brew & Bloom. All right reserved.</p>
     </footer>
 
+
+    <script>
+        const tabButtons = document.querySelectorAll('tab-btn');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        tabButtons.forEach(btn => {
+
+            btn.addEventListener('click',() => {
+
+                tabButtons.forEach(b => b.classList.remove('active'));
+
+                btn.classList.add('active');
+
+                const category = btn.dataset.category;
+
+                menuItems.forEach(item => {
+                    if (category === 'all' || item.dataset.category === category) {
+                        item.classList.remove('hidden');
+                    } else {
+                        item.classList.add('hidden');
+                    }
+                });
+            });
+        });
+        
+    </script>
 </body>
 
 </html>
